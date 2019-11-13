@@ -12,11 +12,13 @@ Now you can navigate to **build** folder and you will find **layer.zip** file th
 
 ## Why do you need it
 
-AWS Lambda is a great tool to run python scripts on the cloud. Considering Python has lots of packages available, AWS supports widely used ones. However, a problem arises when you want to use a package that is not installed default on AWS Lambda runtime. For that case, you have several options including installing the python packages on your local computer and building a deployment package, but you can not use aws lambda editor and uploading to s3 for any minor change is a terrible thing. Another option is using layers, which is what i recommend. In that case, you create a layer for your packages and you can use it directly by selecting use a layer option from aws lambda web gui. also you can the same layer for other lambdas and still use the aws lambda web code editor.
+AWS Lambda is a great tool to run python scripts on the cloud. Considering Python has lots of packages available, AWS supports widely used ones. However, a problem arises when you want to use a package that is not installed default on AWS Lambda runtime.
 
-Building layers has its own problems since you need the same environment as amazonlinux. You can use docker but sometimes debian and pip won't get along and not install all your packages. That's why I am writing this actually. So the solution is using another amazonlinux docker image, lambcli
+To use packages not installed on lambda, you have several options. One of them is installing the python packages on your local computer and building a deployment package, which might seem a good idea but actually terrible in my opinion. You need to download pip packages locally, and package your code and pip files, then upload it as a deployment package. Your pip runtime should be the same as amazonlinux, and who uses debian anyways, so you need to do it in a docker env or another build machnine. But even if you do that, you can not edit your code on aws lambda web gui. Every minor change needs to be deployed again.
+ 
+Another option, which i'd recommend is, using lambda layers. They contains your desired packages. You upload them, and select a layer you want to use, then you can continue to use aws lambda web editor and other stuff like aws has already installed your packages. You can also use same layers for other lambda functions. For example you can build a layer for pandas, numpy, scikit-learn and you can now serve your models with lambda functions like a breeze.
 
-
+Building layers has its own problems since you need the same environment as amazonlinux. You can use docker but sometimes debian and pip won't get along and not install all your packages. That's why I am writing this actually. So the solution is using another amazonlinux docker image, lambcli.
 
 
 ### Tips
