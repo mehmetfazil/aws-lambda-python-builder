@@ -1,6 +1,6 @@
 ## A guide to get external python packages running on AWS Lambda 
 
-### How to use
+### TLDR
 
 - Clone the repo
 - Edit your src/**requirements.txt** for your needs
@@ -9,6 +9,10 @@
 That's it!
 
 Now you can navigate to **build** folder and you will find **layer.zip** file there. Upload it to your AWS Lambda layers, and select it from your AWS lambda function.
+
+### Why do you need it
+
+
 
 ### Tips
 
