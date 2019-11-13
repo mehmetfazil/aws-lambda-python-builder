@@ -1,4 +1,4 @@
-## Build AWS Lambda layers for external Python packages.
+## A guide to get external python packages running on AWS Lambda 
 
 ### How to use
 
