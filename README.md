@@ -8,7 +8,7 @@
 
 That's it!
 
-Now you can navigate to **build** folder and you will find **layer.zip** file there. Add this to your AWS Lambda layers, and select to use it from your AWS lambda function.
+Now you can navigate to **build** folder and you will find **layer.zip** file there. Add this to your AWS Lambda layers, and select it from your AWS lambda function.
 
 ### Tips
 
